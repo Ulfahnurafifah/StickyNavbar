@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulfah Nurafifah - Sticky Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="https://www.youtube.com/@ulfahnouraa"><img src="img/logomea.png" alt=""></a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner" id="home"></div>
+  <div class="about" id="about"> 
+ <div class="content">
+      <div class="title">Responsive Sticky Navigation Menu Bar on Scroll using HTML CSS & JavaScript</div>
+      <p>Hallo Everyone</p>
+      <p>Ini merupakan contoh project tentang Sticky Navbar dibuat dengan bahasa HTML CSS & JavaScript</p>
+      <p>Project ini dibuat oleh Mahasiswi dari sebuah Perguruan Tinggi di Cirebon yaitu Universitas Nahdlatul Ulama Cirebon</p>
+      <p>Mahasiswi ini bernama Ulfah Nurafifah dari Program Studi Teknik Informatika.</p>
+      
+    </div>
+  </div>
+
+
+  <div class="design" id="design"> 
+    <div class="content">
+         <div class="title">Design</div>
+         <p>Berikut Design - Desain yang telah dibuat</p>
+         
+       </div>
+     </div>
+  
+
+     <div class="project" id="project"> 
+      <div class="content">
+           <div class="title">Project</div>
+           <p>Berikut Project - Project yang telah dibuat</p>
+           
+         </div>
+       </div>
+
+
+       <div class="contact" id="contact"> 
+        <div class="content">
+             <div class="title">Hubungi My Contact</div>
+             <img src="img/contact.PNG">
+             <p>0895 3148 9033</p>
+             
+           </div>
+         </div>
+
+
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+</body>
+</html>
